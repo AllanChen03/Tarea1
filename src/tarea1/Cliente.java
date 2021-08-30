@@ -1,35 +1,40 @@
-package tarea1;
+package tarea1; //Proyecto
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import java.io.*;   //Librerias
 import java.net.Socket;
 import java.util.ArrayList;
 
-public class Cliente {
-    private Socket clientSocket;
-    private PrintWriter out;
-    private BufferedReader in;
+public class Cliente { //Clase Cliente
+    final String Host = "192.168.1.11";  //IP de mi PC
+    final int port = 6666; //Puerto del servidor
+    private DataOutputStream out; //Clase que permite Enviar Mensajes
+    private DataInputStream in; //Clase que permite Recibir Mensajes
+/*
+    try {
+        Socket socketCliente = new Socket(Host, port); //Crea un socket para el cliente
+        in = new DataInputStream(socketCliente.getInputStream()); //Variable que va a recibir mensajes
+        out = new DataOutputStream(socketCliente.getOutputStream()); //Variable que va a enviar mensajes
 
-    public void startConnection(String ip, int port) throws IOException {
-        clientSocket = new Socket(ip, port);
-        out = new PrintWriter(clientSocket.getOutputStream(), true);
-        in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-    }
+        out.writeUTF("Hola"); //Envia un mensaje
+
+
+    } catch(IOException)
+*/
 
     public String sendMessage(ArrayList<String> valores) {
-        System.out.println(valores.get(0));
-        System.out.println(valores.get(1));
-        System.out.println(valores.get(2));
+        System.out.println(valores.get(0)); //Imprime el valor del producto
+        System.out.println(valores.get(1)); //Imprime el valor del porcentaje
+        System.out.println(valores.get(2)); //Imprime el peso de producto
         //out.println(msg);
         //String resp = in.readLine();
         return "adios";
     }
-
+/*
     public void stopConnection() throws IOException {
         in.close();
         out.close();
-        clientSocket.close();
+        clientSocket.close(); //Cierra el cliente
     }
+    */
+
 }

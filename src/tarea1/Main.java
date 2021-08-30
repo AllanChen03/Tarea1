@@ -9,7 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-import org.junit.Test;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,16 +18,15 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import static org.junit.Assert.assertEquals;
 
 public class Main extends Application {
 
     @Override
-    public void start(Stage ventanaPrincipal) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        ventanaPrincipal.setTitle("Calculadora");
-        ventanaPrincipal.setScene(new Scene(root, 500, 500));
-        ventanaPrincipal.show();
+    public void start(Stage ventanaPrincipal) throws Exception { //Instancia la ventana de la aplicacion
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml")); //Al correr el codigo se llama a la funcion sample.fxml
+        ventanaPrincipal.setTitle("Calculadora"); //Nombre de la aplicacion
+        ventanaPrincipal.setScene(new Scene(root, 500, 500)); //Dimensiones de la aplicacion
+        ventanaPrincipal.show(); //Muestra la interfaz
 
     }
 
